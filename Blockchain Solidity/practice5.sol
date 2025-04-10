@@ -11,6 +11,7 @@ pragma solidity ^0.8.0;
 
 contract ToggleSwitch {
     bool isOn;
+   // by default the boolean is false
     
     function toggle() public  {
         isOn = !isOn;
