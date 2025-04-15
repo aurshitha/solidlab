@@ -1,5 +1,5 @@
 // --------------------------------------------------------
-// REQUIRE:
+// REQUIRE: used to check inputs and conditions. provide error message. 
 
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
@@ -8,6 +8,7 @@ contract error_Handling {
     address public user;
 
     function deposit(uint _amount) public {
+          // validates inputs and conditions. it refunds the gas.
           require(_amount > 0, "Amount should be greater than zero");
           balance += _amount;
     }
@@ -19,7 +20,7 @@ contract error_Handling {
 }
 
 // -----------------------------------------------------------
-// REVERT:
+// REVERT: used to revert a transaction manually with a message. Explicity reverts with message.
 
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
@@ -45,7 +46,8 @@ contract error_Handling {
 }
 
 // -----------------------------------------------------------
-// ASSERT:
+// ASSERT: Used to check internal errors (should never fail) or invariants or critical errors in code logic.
+// detects internal bugs; no refund.
 
 // SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
